@@ -29,7 +29,7 @@ public class RedesController {
 			BufferedReader buffer = new BufferedReader(leitor);
 			
 			String linha = buffer.readLine();
-			StringBuilder copia = new StringBuilder(linha);
+			StringBuilder copia = new StringBuilder();
 			String adaptador = "";
 			
 			while(linha != null) {
@@ -62,12 +62,12 @@ public class RedesController {
 			BufferedReader buffer = new BufferedReader(leitor);
 			
 			String linha = buffer.readLine();
-			StringBuilder copia = new StringBuilder(linha);
+			StringBuilder copia = new StringBuilder();
 			String adaptador = "";
 			
 			while(linha != null) {
 				
-				if(linha.contains("<") && linha.contains(">") && linha.contains("mtu")) {
+				if(linha.contains("mtu")) {
 					
 					adaptador = linha;
 					
