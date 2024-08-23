@@ -67,12 +67,12 @@ public class RedesController {
 			
 			while(linha != null) {
 				
-				if(linha.contains("Adaptador")) {
+				if(linha.contains("<") && linha.contains(">") && linha.contains("mtu")) {
 					
 					adaptador = linha;
 					
 				}
-				if (linha.contains("IPv4")) {
+				if (linha.contains("inet ")) {
 					
 					copia.append("\n" + adaptador + "\n" + linha);
 				
