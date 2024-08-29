@@ -95,6 +95,47 @@ public class RedesController {
 	
 	public String ping() throws IOException {
 		
+		if(os().contains("Windows")) {
+			
+			Process p = Runtime.getRuntime().exec("ping -4 -n 10 www.google.com.br");
+			InputStream fluxo = p.getInputStream();
+			InputStreamReader leitor = new InputStreamReader(fluxo);
+			BufferedReader buffer = new BufferedReader(leitor);
+			
+			String linha = buffer.readLine();
+			
+			while(linha != null) {
+				
+				if(linha.contains("M") && linha.contains("dia")) {
+					
+					String[] media = linha.split(",");
+					
+					for(String palavra : media) {
+						
+						if(palavra.contains("dia")) { 
+							
+							fluxo.close();
+							leitor.close();
+							buffer.close();
+							
+							return "\n" + palavra;
+							
+						}
+						
+					}
+					
+				}
+				
+				linha = buffer.readLine();
+				
+			}
+			
+		} else if(os().contains("Linux")) {
+			
+			
+			
+		}
+		
 		return null;
 		
 	}
