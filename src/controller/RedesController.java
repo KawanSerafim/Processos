@@ -132,7 +132,37 @@ public class RedesController {
 			
 		} else if(os().contains("Linux")) {
 			
+			Process p = Runtime.getRuntime().exec("ping -4 -c 10 www.google.com.br");
+			InputStream fluxo = p.getInputStream();
+			InputStreamReader leitor = new InputStreamReader(fluxo);
+			BufferedReader buffer = new BufferedReader(leitor);
 			
+			String linha = buffer.readLine();
+			
+			while (linha != null) {
+				
+				if ((linha.contains("mdev"))) {
+					
+					String[] media = linha.split("/");
+					
+					for(String palavra : media) {
+						
+						if(palavra.contains("ms")) {
+							
+							fluxo.close();
+							leitor.close();
+							buffer.close();
+							
+							return "\nMedia = " + palavra;
+							
+						}
+						
+					}
+					
+				}
+				
+				linha = buffer.readLine();
+			}
 			
 		}
 		
