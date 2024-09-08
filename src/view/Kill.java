@@ -28,6 +28,14 @@ public class Kill {
 					
 				case 2:
 					
+					String PID = JOptionPane.showInputDialog("Digite o PID do processo.");
+					kill.matarProcesso(opc, PID);
+					break;
+					
+				case 3:
+					
+					String nome = JOptionPane.showInputDialog("Digite o nome do processo.");
+					kill.matarProcesso(opc, nome);
 					break;
 					
 				case 0:

@@ -59,4 +59,42 @@ public class KillController {
 		
 	}
 	
+	public void matarProcesso(int tipo, String chave) throws IOException {
+		
+		if(os().contains("Windows")) {
+			
+			
+			switch(tipo) {
+			
+				case 2:
+					
+					procExec("TASKKILL /PID " + chave, 1);
+					break;
+					
+				default:
+					
+					procExec("TASKKILL /IM " + chave, 1);
+					
+			}
+				
+			
+		} else if(os().contains("Linux")) {
+			
+			switch(tipo) {
+			
+				case 2:
+					
+					procExec("kill -9 " + chave, 1);
+					break;
+					
+				default:
+					
+					procExec("pkill -f " + chave, 1);
+				
+			}
+			
+		}
+		
+	}
+	
 }
