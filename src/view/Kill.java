@@ -2,28 +2,29 @@ package view;
 
 import java.io.IOException;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
+import controller.KillController;
 
 public class Kill {
 
 	public void menu() throws IOException {
 		
 		int opc = 0;
-		Scanner scan = new Scanner(System.in);
-		
+		KillController kill = new KillController();
 		
 		do {
 			
-			System.out.print("\n\n[Processos - Aula 3: Exercicio 2]\n\n"
-					+ "1 - .\n"
-					+ "2 - .\n"
-					+ "0 - Sair.\n\n"
-					+ "Input: ");
-			opc = scan.nextInt();
+			opc = Integer.parseInt(JOptionPane.showInputDialog("[Processos - Aula 3: Exercicio 2]\n\n"
+					+ "1 - Listar processos.\n"
+					+ "2 - Matar por PID.\n"
+					+ "3 - Matar por nome.\n"
+					+ "0 - Sair."));
 			
 			switch(opc) {
 			
 				case 1:
 					
+					kill.listaProcesso();
 					break;
 					
 				case 2:

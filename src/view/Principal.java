@@ -26,10 +26,12 @@ public class Principal {
 						
 						Redes redes = new Redes();
 						redes.menu();
+						break;
 						
 					case 2:
 						
-						System.out.print("");
+						Kill kill = new Kill();
+						kill.menu();
 						break;
 						
 					case 3:
