@@ -23,7 +23,7 @@ public class Kill {
 			
 				case 1:
 					
-					kill.listaProcesso();
+					System.out.println(kill.listaProcesso());
 					break;
 					
 				case 2:
@@ -44,7 +44,7 @@ public class Kill {
 					
 				default:
 					
-					System.out.println("\nInput invalido. Digite novamente.\n\n");
+					JOptionPane.showMessageDialog(null, "Input inválido");
 				
 			}
 			

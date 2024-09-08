@@ -35,12 +35,13 @@ public class Principal {
 						
 					case 3:
 						
-						System.out.print("");
+						Distro distro = new Distro();
+						distro.menu();
 						break;
 						
 					case 4:
 						
-						System.out.print("");
+						
 						break;
 						
 					case 0:
@@ -49,7 +50,7 @@ public class Principal {
 						
 					default:
 						
-						System.out.println("\nInput invalido. Digite novamente.\n\n");
+						JOptionPane.showMessageDialog(null, "Input inválido");
 					
 				}
 				

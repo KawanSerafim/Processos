@@ -37,7 +37,7 @@ public class Redes {
 					
 				default:
 					
-					JOptionPane.showMessageDialog(null, "Input invalido. Digite novamente.");
+					JOptionPane.showMessageDialog(null, "Input inválido");
 				
 			}
 			

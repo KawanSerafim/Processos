@@ -19,7 +19,7 @@ public class KillController {
 		
 	}
 	
-	private void procExec(String comando, int tipo) throws IOException {
+	private String procExec(String comando, int tipo) throws IOException {
 		
 		Process p = Runtime.getRuntime().exec(comando);
 		
@@ -28,11 +28,13 @@ public class KillController {
 			InputStream fluxo = p.getInputStream();
 			InputStreamReader leitor = new InputStreamReader(fluxo);
 			BufferedReader buffer = new BufferedReader(leitor);
+			
 			String linha = buffer.readLine();
+			StringBuilder copia = new StringBuilder();
 				
 			while(linha != null) {
 					
-				System.out.println(linha);
+				copia.append(linha + "\n");
 				linha = buffer.readLine();
 					
 			}
@@ -41,21 +43,27 @@ public class KillController {
 			leitor.close();
 			buffer.close();
 			
+			return copia.toString();
+			
 		}
+		
+		return null;
 		
 	}
 	
-	public void listaProcesso() throws IOException {
+	public String listaProcesso() throws IOException {
 		
 		if(os().contains("Windows")) {
 			
-			procExec("TASKLIST /FO TABLE", 0);
+			return procExec("TASKLIST /FO TABLE", 0);
 			
 		} else if(os().contains("Linux")) {
 			
 			procExec("ps -ef", 0);
 			
 		}
+		
+		return null;
 		
 	}
 	
