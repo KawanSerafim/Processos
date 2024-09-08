@@ -5,8 +5,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-import javax.swing.JOptionPane;
-
 public class KillController {
 	
 	public KillController() {

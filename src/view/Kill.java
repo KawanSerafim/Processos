@@ -1,7 +1,6 @@
 package view;
 
 import java.io.IOException;
-import java.util.Scanner;
 import javax.swing.JOptionPane;
 import controller.KillController;
 
